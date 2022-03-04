@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="row border border-primary mb-3">
+  <div class="row border border-primary mb-5">
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{ url_for('static', filename='images/computer.png')}}" class="d-block w-100" alt="...">
+          <a href="{{ url_for('simple_pages.show', page="git")}}">
+              <img src="{{ url_for('static', filename='images/github.png')}}" class="d-block w-50" alt="...">
+          </a>
         </div>
         <div class="carousel-item">
-          <img src="{{ url_for('static', filename='images/computer.png')}}" class="d-block w-100" alt="...">
+          <img src="{{ url_for('static', filename='images/computer.png')}}" class="d-block w-50" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="{{ url_for('static', filename='images/computer.png')}}" class="d-block w-100" alt="...">
+          <img src="{{ url_for('static', filename='images/computer.png')}}" class="d-block w-50" alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -23,37 +25,40 @@
       </button>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <div class="card" style="width: 22rem;">
+  <div class="row container">
+    <div class="col-3">
+      <div class="card" style="width: 15rem;">
+        <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+            <a href="{{ url_for('simple_pages.show', page="git")}}"><h5 class="card-title">Intro to Git</h5></a>
+          <h6 class="card-subtitle mb-2 text-muted">The Ultimate Versioning Tool</h6>
+          <p class="card-text">Learn about Git and how it plays an essential role in development.</p>
         </div>
       </div>
     </div>
-      <div class="col">
-      <div class="card" style="width: 22rem;">
+      <div class="col-3">
+      <div class="card" style="width: 15rem;">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+            <a href="{{ url_for('simple_pages.show', page="git")}}"><h5 class="card-title">Intro to Git</h5></a>
+          <h6 class="card-subtitle mb-2 text-muted">The Ultimate Versioning Tool</h6>
+          <p class="card-text">Learn about Git and how it plays an essential role in development.</p>
         </div>
       </div>
     </div>
-      <div class="col">
-      <div class="card" style="width: 22rem;">
+      <div class="col-3">
+      <div class="card" style="width: 15rem;">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+            <a href="{{ url_for('simple_pages.show', page="git")}}"><h5 class="card-title">Intro to Git</h5></a>
+          <h6 class="card-subtitle mb-2 text-muted">The Ultimate Versioning Tool</h6>
+          <p class="card-text">Learn about Git and how it plays an essential role in development.</p>
+        </div>
+      </div>
+      <div class="col-3">
+      <div class="card" style="width: 15rem;">
+        <div class="card-body">
+            <a href="{{ url_for('simple_pages.show', page="git")}}"><h5 class="card-title">Intro to Git</h5></a>
+          <h6 class="card-subtitle mb-2 text-muted">The Ultimate Versioning Tool</h6>
+          <p class="card-text">Learn about Git and how it plays an essential role in development.</p>
         </div>
       </div>
     </div>

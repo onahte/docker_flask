@@ -1,28 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
     <div class="row">
-        <div class="col-8">
+        <div class="col-12">
             <main>
                 <div class="container">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Sed blandit libero volutpat sed cras ornare arcu. At ultrices mi tempus
-                        imperdiet nulla malesuada pellentesque elit. Facilisis sed odio morbi quis commodo odio.
-                        Dignissim enim sit amet venenatis urna cursus. Facilisis leo vel fringilla est ullamcorper. Sem fringilla
-                        ut morbi tincidunt. Habitant morbi tristique senectus et netus. Tempus egestas sed sed risus pretium.
-                        Vitae justo eget magna fermentum iaculis eu. Urna id volutpat lacus laoreet. Morbi tristique senectus
-                        et netus et malesuada fames ac.
-                    </p>
-                    <p>Fringilla ut morbi tincidunt augue interdum velit euismod. Purus viverra accumsan in nisl nisi
-                        scelerisque. Cras tincidunt lobortis feugiat vivamus at augue. Sem integer vitae justo eget
-                        magna fermentum. Placerat orci nulla pellentesque dignissim enim sit amet venenatis urna. Mi in nulla
-                        posuere sollicitudin aliquam. Sed velit dignissim sodales ut eu sem integer vitae. Sagittis orci a
-                        scelerisque purus semper eget duis. Massa tincidunt dui ut ornare lectus. Euismod elementum nisi quis eleifend
-                        quam adipiscing vitae proin. Sit amet tellus cras adipiscing enim eu. Volutpat diam ut venenatis tellus in. Sed
-                        elementum tempus egestas sed sed risus pretium. Sit amet massa vitae tortor condimentum lacinia quis vel.
-                        Id interdum velit laoreet id donec ultrices tincidunt arcu. Suspendisse in est ante in nibh mauris cursus.
-                    </p>
+                  <body>
+                    <h2>Welcome to Project 1 of Spring IS601 class</h2>
+                    <p>Introduction to web technologies and methodologies used in DevOps.</p>
+                    <img src="{{ url_for('static', filename='images/devops.png')}}" class="d-block w-50" alt="devops cycle">
+                    <br>
+                    <br>
+                    <h2>Assignment Objectives:</h2>
+                    <p>Discuss the following:</p>
+                    <p>1. Git</p>
+                    <p>2. Docker</p>
+                    <p>3. Python/Flask</p>
+                    <p>4. CI/CD</p>
                     <hr class="featurette-divider">
-                    <p>About Page</p>
+                  </body>
                 </div>
             </main>
         </div>
