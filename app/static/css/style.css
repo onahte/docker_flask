@@ -1,3 +1,14 @@
 body {
 font-size: 100%;
 }
+
+.p {
+  font-family: "Andalé Mono", "Courier", "Lucida Console", "Monaco", monospace;
+  font-size: 75%;
+  font-weight: bold;
+  background-color: aquamarine;
+}
+
+@media (min-width: 992px) {
+  .rounded-lg-3 { border-radius: .3rem; }
+}

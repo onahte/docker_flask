@@ -1,4 +1,128 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 1
+    <main>
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 class="display-4 fw-bold">Git</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    Git is a versioning tool that allows multiple collaborators to work together on a project while
+                    minimizing code conflicts. Remote versions of the main code can be created and worked on
+                    independently. Then, each collaborator's version (or branch) can be uploaded to the code base and
+                    merged after review. <span class="text-warning">Github</span> is a website that gives the public
+                    access to the Git technology and can house your code base as repositories (aka repo). Github also
+                    offers many other tools that make code development and production easier and more secure.
+                </p>
+            </div>
+            <div class="overflow-hidden" style="max-height: 30vh;">
+                <div class="container px-5">
+                    <img src="{{ url_for('static', filename='images/git_home.png') }}"
+                         class="img-fluid border rounded-3 shadow-lg mb-4" alt="Ethan's Github" width="600" height="500"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-5">
+                    <img src="{{ url_for('static', filename='images/git_projectrepo.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-3" alt="Bootstrap Themes"
+                         width="700" height="700"
+                         loading="lazy">
+                    <div class="d-grid gap-2 d-md-flex justify-content-end">
+                        <a href="https://github.com/onahte/docker_flask" target="_blank">
+                            <button type="button" class="btn btn-primary btn-lg px-4">See the Repo</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold lh-1 mb-3">Repos & Branches</h2>
+                    <p class="lead">
+                        Github allows you to work directly in your repo or clone a repo to allow you to work remotely on
+                        your personal workspace. It's always a good idea though, to branch off of the main branch and
+                        create a child branch before you begin. This is so that potentially problematic code can be
+                        isolated to your child branch and your main code base can be preserved. As you are working,
+                        updates to the repository can be made via the add, commit and push commands. <span class="p">git
+                        add &lt;FILE&gt;</span> stages the revision you would like to upload to your repo.
+                        <span class="p">git commit</span> snapshots the staged revisions and <span class="p">git push
+                        -u &lt;DESTINATION REPO&gt; &lt;BRANCH&gt;</span> uploads those revisions to your repo. Be sure
+                        to pass the <span class="p">-m</span> flag with your commits with a meaningful description of
+                        the revision being made. This is because, Github keeps a history of commits, which you and your
+                        team can reference to troubleshoot, make changes or roll back revisions. An informative
+                        description helps everyone. To see the revision history, type in the command
+                        <span class="p">git log</span>.
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-5">
+                    <img src="{{ url_for('static', filename='images/git_mergediagram.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-sm" alt="Bootstrap Themes"
+                         width="700" height="700"
+                         loading="lazy">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold lh-1 mb-3">Tagging & Merging</h2>
+                    <p class="lead">
+                        Git's tag feature allows you to mark a certain point in your branch history. You may want to tag
+                        a commit as a progress marker or to note a version release of your code. A tag is meant to be
+                        permanent and can be performed with the <span class="p">git tag -l "&lt;TAG&gt;"</span>
+                        command. To see information of a tagged commit, use the <span class="p">git show &lt;TAG&gt;
+                        </span> command.
+                    </p>
+                    <p class="lead">
+                        Merging, as mentioned before can be implemented when the code of any two branches are ready to
+                        be combined. To do so, run <span class="p">git merge &lt;BRANCH_NAME&gt;</span> from the branch
+                        you want to merge into and passing into the command the branch you want to merge with. The
+                        branches will merge with the latest commit in the branch's respective revision history.
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-5">
+                    <img src="{{ url_for('static', filename='images/git-secret.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-3" alt="Bootstrap Themes"
+                         width="700" height="700"
+                         loading="lazy">
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold lh-1 mb-3">Automation: Secret & Actions</h2>
+                    <p class="lead">
+                        Github offers a feature called Actions (also accessible from within the repo) that helps you
+                        automate your CI/CD pipeline. By navigating to the Actions page, you can see the actions
+                        history and their pass/success status. By clicking on an action, you can find more detailed
+                        information in case you need to troubleshoot. These actions are triggered by implementing
+                        Workflow files, which needs to be organized into .github/workflows directory structure in the
+                        repo. For this project, the <span class="p">git push</span> to the main branch triggers the
+                        prod.yml file and similarly, the <span class="p">git pull</span> to the main branch triggers
+                        the dev.yml file. Each of these files contain the task list to be automated. I dive deeper into
+                        these Workflow files in the CI/CD section of this website. Please feel free to skip ahead by
+                        clicking on the blue link.
+                        <a href="{{ url_for('simple_pages.show', page="cicd")}}">
+                            <button type="button" class="btn btn-primary btn-sm px-1">CI/CD</button>
+                        </a>
+                    </p>
+                    <p class="lead">
+                        By navigating to the Settings page of the repo, the Secret feature allows you to enter in the
+                        login credentials of the accounts used as part of the CI/CD pipeline. This feature allows the
+                        developer to safely store the credentials without exposing them in plain text in the Workflow
+                        files. As you can see for this project, I have my Dockerhub and Heroku accounts set up as part
+                        of my automated CI/CD pipeline.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <hr class="featurette-divider">
+        </div>
+    </main>
 {% endblock %}

@@ -1,67 +1,99 @@
 {% extends "base.html" %}
 {% block content %}
-  <div class="row border border-primary mb-5">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <a href="{{ url_for('simple_pages.show', page="git")}}">
-              <img src="{{ url_for('static', filename='images/github.png')}}" class="d-block w-50" alt="...">
-          </a>
+    <main>
+        <div id="myCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Git"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Docker"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
+                        aria-label="Python/Flask"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="CICD"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ url_for('static', filename='images/banner_git.jpg') }}">
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1 class="text-dark">Power of Versioning</h1>
+                            <p class="text-dark">Git allows project participants to make changes to the code base safely
+                                and efficiently.</p>
+                            <p><a class="btn btn-lg btn-primary" href="{{ url_for('simple_pages.show', page="git") }}">Learn
+                                About Git</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='images/banner_docker.jpg') }}">
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Containerize Your Code</h1>
+                            <p>Learn about this building block for automating your application deployment.</p>
+                            <p><a class="btn btn-lg btn-primary"
+                                  href="{{ url_for('simple_pages.show', page="docker") }}">Learn About Docker</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='images/banner_python.jpg') }}">
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1 class="text-dark">A Framework to Do It All</h1>
+                            <p class="text-dark">Build your web page once to service infinite customers.</p>
+                            <p><a class="btn btn-lg btn-primary"
+                                  href="{{ url_for('simple_pages.show', page="python") }}">Learn About Python &
+                                Flask</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='images/banner_cicd.jpg') }}">
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Keep It Going</h1>
+                            <p>Application development doesn't have to be a stop, wait and go process. Not with a CI/CD
+                                pipeline.</p>
+                            <p><a class="btn btn-lg btn-primary" href="{{ url_for('simple_pages.show', page="git") }}">Learn
+                                About CICD</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
-        <div class="carousel-item">
-          <img src="{{ url_for('static', filename='images/computer.png')}}" class="d-block w-50" alt="...">
+        <div class="container col-xxl-8">
+            <div class="row featurette  d-flex align-items-center">
+                <div class="col-md-7 order-md-2">
+                    <h3 class="featurette-heading">Project Outline</h3>
+                    <p class="lead">
+                        The topics covered in class have allowed students to become familiar with the most in-demand
+                        web technologies, paving the way to an entry-level devops role. By implementing the tools
+                        learned here, the students can now automate pipelines and integrate unit testing to build robust
+                        workflows that reflect the needs of a real-world development environment. This website covers
+                        these tools and discusses how they have been applied to build this site (aka Project 1).
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img src="{{ url_for('static', filename='images/teamwork-illustration.jpg') }}"
+                     class="img-fluid  mb-4" alt="Team" width="500" height="500"
+                     loading="lazy">
+                </div>
+            </div>
         </div>
-        <div class="carousel-item">
-          <img src="{{ url_for('static', filename='images/computer.png')}}" class="d-block w-50" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+    <div class="container">
+        <hr class="featurette-divider">
     </div>
-  </div>
-  <div class="row container">
-    <div class="col-3">
-      <div class="card" style="width: 15rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <a href="{{ url_for('simple_pages.show', page="git")}}"><h5 class="card-title">Intro to Git</h5></a>
-          <h6 class="card-subtitle mb-2 text-muted">The Ultimate Versioning Tool</h6>
-          <p class="card-text">Learn about Git and how it plays an essential role in development.</p>
-        </div>
-      </div>
-    </div>
-      <div class="col-3">
-      <div class="card" style="width: 15rem;">
-        <div class="card-body">
-            <a href="{{ url_for('simple_pages.show', page="git")}}"><h5 class="card-title">Intro to Git</h5></a>
-          <h6 class="card-subtitle mb-2 text-muted">The Ultimate Versioning Tool</h6>
-          <p class="card-text">Learn about Git and how it plays an essential role in development.</p>
-        </div>
-      </div>
-    </div>
-      <div class="col-3">
-      <div class="card" style="width: 15rem;">
-        <div class="card-body">
-            <a href="{{ url_for('simple_pages.show', page="git")}}"><h5 class="card-title">Intro to Git</h5></a>
-          <h6 class="card-subtitle mb-2 text-muted">The Ultimate Versioning Tool</h6>
-          <p class="card-text">Learn about Git and how it plays an essential role in development.</p>
-        </div>
-      </div>
-      <div class="col-3">
-      <div class="card" style="width: 15rem;">
-        <div class="card-body">
-            <a href="{{ url_for('simple_pages.show', page="git")}}"><h5 class="card-title">Intro to Git</h5></a>
-          <h6 class="card-subtitle mb-2 text-muted">The Ultimate Versioning Tool</h6>
-          <p class="card-text">Learn about Git and how it plays an essential role in development.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <p>Index Page</p>
+
+    </main>
 {% endblock %}

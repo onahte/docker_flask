@@ -1,4 +1,130 @@
 {% extends "base.html" %}
 {% block content %}
-    Page 2
+
+    <main>
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 class="display-4 fw-bold">Docker</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    Docker allows users to launch applications anywhere with less concern for hardware resources or
+                    application environment conflicts. Docker is a containerization technology and abstracts away the
+                    hardware layer. Consequently, Docker packages applications into containers with just a library,
+                    whereas VM's require a virtualized OS on top of the host OS AND explicit allocation of hardware
+                    resources. In this regard, Docker is much much more agile and resource efficient.
+                </p>
+            </div>
+            <div class="overflow-hidden" style="max-height: 30vh;">
+                <div class="container px-5">
+                    <img src="{{ url_for('static', filename='images/dockerhub.png') }}"
+                         class="img-fluid border rounded-3 shadow-lg mb-4" alt="Ethan's Github" width="600" height="500"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-5">
+                    <img src="{{ url_for('static', filename='images/dockerhub-flaskbase.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-3" alt="Bootstrap Themes"
+                         width="700" height="700"
+                         loading="lazy">
+                    <div class="d-grid gap-2 d-md-flex justify-content-end">
+                        <a href="https://hub.docker.com/repository/docker/honahte/flaskbase" target="_blank">
+                            <button type="button" class="btn btn-primary btn-lg px-4">See the Repo</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold lh-1 mb-3">Dockerhub, Images & Containers</h2>
+                    <p class="lead">
+                        Just like Github, Docker offers a repository platform, <span class="text-warning">Dockerhub
+                        </span>. These repositories are a store of Docker images and can be publicly shared. An
+                        image is a template for creating an environment of your choice and has everything needed to run
+                        your application. Images can be downloaded from Dockerhub with <span class="p">docker pull
+                        &lt;IMAGE&gt;</span>. To view the images in your local machine, run <span class="p">docker
+                        images</span> command. A container is an instance of an image command and can be instanced
+                        via <span
+                            class="p">docker run -dp &lt;HOST PORT&gt;:&lt;CONTAINER PORT&gt; &lt;IMAGE&gt;:tag</span>.
+                        To
+                        see all locally running containers, run the command, <span class="p">docker ps</span>. To see
+                        all containers, pass the<span class="p">-a</span> flag and run <span class="p">docker ps
+                        -a</span>. To stop a running container, run the <span class="p">docker stop &lt;CONTAINER
+                        ID&gt;</span> command or <span class="p">docker stop &lt;CONTAINER NAME&gt;</span>.
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-5">
+                    <img src="{{ url_for('static', filename='images/docker_dashboard.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg" alt="Bootstrap Themes"
+                         width="700" height="700"
+                         loading="lazy">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold lh-1 mb-3">Docker Dashboard</h2>
+                    <p class="lead">
+                        A GUI implementation of Docker is available via the Dashboard. From here, containers can be run,
+                        stopped and deleted with a click of a mouse. The interface is intuitive so not much more needs
+                        to be said. One nice feature of Dashboard is the ability to monitor the running status of a
+                        container. Furthermore, the CLI icon executes the <span class="p">docker exec -it
+                        &lt;CONTAINER NAME&gt; bash</span> command and allows you to navigate inside the running
+                        container.
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6 py-5">
+                    <p class="lead">
+                        Delete a non-running container:<br>
+                        <span class="p">docker rm &lt;CONTAINER ID&gt;</span><br>
+                        or<br>
+                        <span class="p">docker rm &lt;NAME&gt;</span><br>
+                        To delete multiple containers, you can string multiple container ID's. To delete a running
+                        container, add a <span class="p">-f</span> flag<br><br>
+                        Delete an image:<br>
+                        <span class="p">docker image rm &lt;IMAGE&gt;</span><br><br>
+                        Create a duplicate image with new tag:<br>
+                        <span class="p">docker tag &lt;CURRENT IMAGE NAME&gt; &lt;NEW IMAGE NAME&gt;</span><br><br>
+                        Show supported architectures<br>
+                        <span class="p">docker buildx ls</span>
+                    </p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold lh-1 mb-3">Additional Docker Commands</h2>
+                    <p class="lead">
+                        Build a Docker image from Dockerfile:<br>
+                        <span class="p">docker build -t &lt;IMAGE NAME&gt; &lt;DOCKERFILE SOURCE&gt;</span><br><br>
+                        Build a container using docker-compose.yml<br>
+                        <span class="p">docker-compose up build</span><br><br>
+                        Assign a name to container (Docker will auto-create a name if not explicitly assigned): <br>
+                        <span class="p">docker run --name &lt;NAME&gt; &lt;IMAGE&gt;</span> <br><br>
+                        Run a platform specific container:<br>
+                        <span class="p">docker run --platform &lt;ARCHITECTURE&gt;</span> <br><br>
+                    </p>
+                    <h3 class="mb-3">Build a Docker image for M1 Macs:</h3>
+                    <p class="lead">
+                        Enable buildx command:<br>
+                        <span class="p">set DOCKER_CLI_EXPERIMENTAL=enabled</span><br><br>
+                        Build an image formatted for the specified architecture:<br>
+                        <span class="p">docker buildx build --platform linux/amd64 -t &lt;IMAGE&gt;
+                            &lt;DOCKERFILE SOURCE&gt;</span><br><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <hr class="featurette-divider">
+        </div>
+    </main>
+
 {% endblock %}
