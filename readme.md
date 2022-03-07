@@ -17,6 +17,8 @@
 - Flask
 - Blueprint
 - YAML
+- HTML
+- CSS
 - CI/CD
 
 ### Summary
