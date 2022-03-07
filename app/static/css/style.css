@@ -9,6 +9,22 @@ font-size: 100%;
   background-color: aquamarine;
 }
 
+.f {
+  font-family: "Andalé Mono", "Courier", "Lucida Console", "Monaco", monospace;
+  font-size: 75%;
+  font-weight: bold;
+  /*background-color: gold;*/
+}
+
+.s {
+  font-size: 75%;
+}
+
+.q {
+  font-family: "Times New Roman", "Times", Serif;
+  font-style: italic;
+}
+
 @media (min-width: 992px) {
   .rounded-lg-3 { border-radius: .3rem; }
 }

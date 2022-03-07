@@ -34,10 +34,10 @@
             <a class="nav-link"  href="{{ url_for('simple_pages.show', page="docker")}}">Docker</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="python")}}">Python/Flask</a>
+            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="python")}}">Python+Flask</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="cicd")}}">CICD</a>
+            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="cicd")}}">CI/CD</a>
           </li>
         </ul>
       </div>
@@ -50,8 +50,9 @@
 
 
   <footer class="container">
-     <p class="float-end"><a href="#">Back to top</a></p>
-    <p>&copy; {{ year }} Ethan Oh &middot; <a href="mailto:eo238@njit.com">Contact</a></p>
+      <p class="float-end"><a href="#">Back to top</a></p>
+      <p>Environment: {{ deployment_environment }} - Copyright: {{ year }} Ethan Oh &middot; <a href="mailto:eo238@njit.com">Contact</a></p>
+      <p>Message: {{ mymessage }} {{ format_price(100) }}</p>
   </footer>
 
 
