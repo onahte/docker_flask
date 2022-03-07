@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block content %}
+    <main>
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 class="display-4 fw-bold">Python + Flask</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    Python allows you to serve a web application dynamically via the Flask web framework. Flask is a set of
+                    libraries designed to minimize static configurations and code repetition through the use of Werkzeug
+                    WSGI and Jinja. Flask is designed to be nimble and highly configurable. This page will discuss how
+                    Flask was implemented for this project, but to explore Flask in more detail and see to if it's right for
+                    your next project, please click the below.
+                </p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-4">
+                    <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Flask Home</button>
+                    </a>
+                </div>
+            </div>
+            <div class="overflow-hidden" style="max-height: 30vh;">
+                <div class="container px-5">
+                    <img src="{{ url_for('static', filename='images/flask_home.png') }}"
+                         class="img-fluid border rounded-3 shadow-lg mb-4" alt="Flask Homepage" width="600" height="500"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse g-5 py-5">
+                <div class="col-10 col-sm-6 col-lg-6">
+                    <p><br><br>
+                        <span class="f">docker_flask</span><span class="s">&nbsp;&nbsp;// Root</span><br>
+                        <span class="f">|-app</span><span class="s">&nbsp;&nbsp;// Folder for web-related files</span><br>
+                        <span class="f">&nbsp;&nbsp;|-__init__.py</span><span class="s">&nbsp;&nbsp;// Initializes Flask to
+                        serve web pages</span><br>
+                        <span class="f">&nbsp;&nbsp;|-run.py</span><span class="s">&nbsp;&nbsp;// Initializes Gunicorn for
+                        dynamic web service</span><br>
+                        <span class="f">&nbsp;&nbsp;|-templates</span><span class="s">&nbsp;&nbsp;// Required Flask folder
+                        for HTML files</span><br>
+                        <span class="f">&nbsp;&nbsp;&nbsp;&nbsp;|-base.html</span><span class="s">&nbsp;&nbsp;//
+                        base template applied to all pages</span><br>
+                        <span class="f">&nbsp;&nbsp;|-static</span><span class="s">&nbsp;&nbsp;// Folder for web
+                        elements</span><br>
+                        <span class="f">&nbsp;&nbsp;&nbsp;&nbsp;|-css</span><br>
+                        <span class="f">&nbsp;&nbsp;&nbsp;&nbsp;|-images</span><br>
+                        <span class="f">&nbsp;&nbsp;&nbsp;&nbsp;|-js</span><br>
+                        <span class="f">&nbsp;&nbsp;|-simple_pages</span><span class="s">&nbsp;&nbsp;// Flask Blueprint
+                        folder</span><br>
+                        <span class="f">&nbsp;&nbsp;&nbsp;&nbsp;|-__init__.py</span><span class="s">&nbsp;&nbsp;//
+                        Initializes Blueprint to serve web pages</span><br>
+                        <span class="f">&nbsp;&nbsp;&nbsp;&nbsp;|-templates</span><span class="s">&nbsp;&nbsp;// Folder
+                            containing web pages to be served by Blueprint</span><br>
+                        <span class="f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-index.html</span><br>
+                        <span class="f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-git.html</span><br>
+                        <span class="f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-docker.html</span><br>
+                        <span class="f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-python.html</span><br>
+                        <span class="f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-cicd.html</span><br>
+                        <span class="f">|-tests</span><span class="s">&nbsp;&nbsp;// Folder for code tests</span><br>
+                        <span class="f">&nbsp;&nbsp;|-__init__.py</span><span class="s">&nbsp;&nbsp;// Currently empty
+                        </span><br>
+                        <span class="f">&nbsp;&nbsp;|-conftest.py</span><span class="s">&nbsp;&nbsp;// Configuration test
+                        </span><br>
+                        <span class="f">&nbsp;&nbsp;|-context_process_test.py</span><span class="s">&nbsp;&nbsp;//
+                            Tests if </span> <span class="f">/context_processors</span><span class="s"> was applied
+                        </span><br>
+                        <span class="f">&nbsp;&nbsp;|-simple_pages_test.py</span><span class="s">&nbsp;&nbsp;//
+                            Uses key words to validate HTML page renders</span><br>
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold lh-1 mb-3">File Organization</h2>
+                    <p class="lead">
+                        For Flask to work, we need to build the <span class="f">/templates</span> and <span class="f">
+                        /static</span> directories. The <span class="f">/templates</span> folder houses the project's HTML
+                        pages and the <span class="f">/static</span> folder stores elements used by the html pages such as
+                        CSS, images and JASON scripts, each organized into their respective folders. For this project,
+                        however, we have implemented Blueprint and so <span class="f">/templates</span> folder only contains
+                        <span class="f">base.html</span>, which is the template we use to build all our webpages.
+                        <span class="f">base.html</span> allows us to build page elements once and apply it without
+                        repeating our code (i.e. navigation) using Jinja.
+                    </p>
+                    <p class="lead">
+                        The entire render begins from <span class="f">/app/__init__.py</span> which initializes
+                        the <span class="f">/simple_pages/__init__.py</span>. Blueprint then renders each of the pages
+                        using the <span class="p">def show(page)</span> method and the HTML files in
+                        <span class="f">/simple_pages/templates</span>. To learn more about Blueprint and to see if it's
+                        right for your next project, please click on the following blue link.
+                        <a href="https://flask.palletsprojects.com/en/2.0.x/tutorial/views/" target="_blank">
+                            <button type="button" class="btn btn-primary btn-sm px-2 me-sm-3">Flask Blueprint</button>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+            <div class="container col-xxl-8">
+                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                    <div class="col-10 col-sm-8 col-lg-5">
+                        <img src="{{ url_for('static', filename='images/prodyml_pytest.png') }}"
+                             class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg" alt="Pro_yml Pytest"
+                             width="350" height="350" loading="lazy">
+                    </div>
+                    <div class="col-lg-7">
+                        <h2 class="fw-bold lh-1 mb-3">Testing the Code</h2>
+                        <p class="lead">
+                            Testing code is a major component of application development and an element we could hardly
+                            forget to implement here. Our testing is executed automatically and activated by the Git
+                            Workflow actions. As you can see in the screenshot, PyTest is installed as part of the Python
+                            3.8 dependencies list, then run with the <span class="p">pytest -vv</span> command. The tests
+                            are relatively simple and looks to see if the pages were rendered correctly by Flask. They are
+                            stored in the <span class="f">/tests</span> folder and the test results can be reviewed on the
+                            Github Actions page. This is a great tool when you find your web pages are not being served as
+                            it should. To learn more about PyTest, please click on the blue link.
+                            <a href="https://docs.pytest.org/en/7.0.x/" target="_blank">
+                                <button type="button" class="btn btn-primary btn-sm px-2 me-sm-3">PyTest</button>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+        </div>
+        <div class="container">
+            <hr class="featurette-divider">
+        </div>
+    </main>
+{% endblock %}
