@@ -13,7 +13,10 @@
 
 - Git
 - Docker
-- Python/Flask
+- Python
+- Flask
+- Blueprint
+- YAML
 - CI/CD
 
 ### Summary
