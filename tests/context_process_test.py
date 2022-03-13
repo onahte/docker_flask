@@ -1,4 +1,4 @@
-"""Context Process Test"""
+"""This tests the context processors that help the theme print common functions"""
 import datetime
 from os import getenv
 
@@ -28,4 +28,4 @@ def test_context_currency_format(client):
     test_string = "$100"
     content = bytes(test_string, 'utf-8')
     assert response.status_code == 200
-    assert content in response.data
+    assert content in response.
