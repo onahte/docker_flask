@@ -1,3 +1,4 @@
+"""These are reusable template function"""
 from os import getenv
 import datetime
 
