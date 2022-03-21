@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+    <main>
+        <div class="px-4 pt-5 my-7 text-center border-bottom">
+            <h1 class="display-4 fw-bold">AAA</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    AAA
+                </p>
+                Create a tutorial that demonstrates AAA testing with Python and explain why testing is important. pylint
+            </div>
+            <div class="overflow-hidden" style="max-height: 30vh;">
+                <div class="container px-5">
+                    <img src="{{ url_for('static', filename='images/aaa_team.jpg') }}"
+                         class="img-fluid mb-4" alt="Flask Homepage" width="700" height="800"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-5">
+                    <img src="{{ url_for('static', filename='images/heroku_dashboard.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-sm" alt="Heroku"
+                         width="700" height="700"
+                         loading="lazy">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold lh-1 mb-3">Heroku</h2>
+                    <p class="lead">
+                        Heroku is a PaaS that's a part of our automation pipeline. The Heroku platform is built on top
+                        of AWS but the cloud-level configurations have been abstracted away and done for us by Heroku.
+                        Furthermore, Heroku allows us to test our deployment by defaulting the deploy as
+                        <span class="f">https://&lt;APP_NAME&gt;.herokuapp.com</span>. There is of course, the option to
+                        deploy the service with a personal domain.
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-5 mb-3">
+                    <img src="{{ url_for('static', filename='images/herokudeploy_yml.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-5" alt="Heroku-deploy YAML"
+                         width="700" height="700"
+                         loading="lazy">
+
+                    <img src="{{ url_for('static', filename='images/git_actions.png') }}"
+                         class="d-block img-fluid border rounded-3 shadow-lg" alt="Heroku-deploy YAML"
+                         width="500" height="500"
+                         loading="lazy">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold lh-1 mb-3">Automation & YAML</h2>
+                    <p class="lead">
+                        As mentioned in the Git section of this project site, this website is automatically instantiated
+                        by Github via the <span class="f">prod.yml</span> and <span class="f">dev.yml</span> Workflow
+                        files. These YAML files provide the metadata for Github to know what and how to execute the
+                        automation (so using Github's action keywords is very important). Github will execute the
+                        Workflow file in the order that it was composed. Simple boolean logic is built-in but please
+                        note that YAML is a mark-up language and not a programming language, so it is not capable of
+                        complex logic (I learned this the hard way).
+                    </p>
+                    <p class="lead">
+                        The <span class="f">prod.yml</span> takes advantage of PyTest to test our page renders as well
+                        as the <span class="f">akhileshns/heroku-deploy</span> repo to provide the code to launch our
+                        production Heroku app. There is no testing executed by <span class="f">dev.yml</span> but like
+                        <span class="f">prod.yml</span>, we take advantage of the <span class="f">akhileshns/
+                        heroku-deploy</span> repo to deploy the development Heroku app. The Docker image of this project
+                        is deployed from the Heroku app, which is a container of the Python Blueprint and the Flask
+                        framework and they in turn, render this website. All this is triggered by a
+                        <span class="p">git push</span>. It's really quite remarkable.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <hr class="featurette-divider">
+        </div>
+    </main>
+{% endblock %}

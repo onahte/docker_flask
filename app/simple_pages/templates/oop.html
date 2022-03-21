@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block content %}
+    <main>
+        <div class="px-4 pt-5 my-7 text-center border-bottom">
+            <h1 class="display-4 fw-bold">OOP</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    Object oriented programming or OOP is a programming paradigm, where programs are organized as
+                    objects. An object's behaviors and characteristics are defined by a class and its
+                    methods. Below is a glossary of terms and an explanation of how OOP principles were applied in our
+                    basic calculator app.
+                </p>
+            </div>
+            <div class="overflow-hidden" style="max-height: 30vh;">
+                <div class="container px-5">
+                    <img src="{{ url_for('static', filename='images/oop.jpg') }}"
+                         class="img-fluid mb-4 shadow-lg" alt="OOP" width="550" height="600" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6 py-5">
+                    <p class="lead">
+                        <span class="i">constructor</span><br>
+                        <span class="s">a required method in a class that defines the characteristics of an object
+                        </span><br><br>
+                        <span class="i">instance method</span><br>
+                        <span class="s">a class method that defines an attribute or action of an object</span><br><br>
+                        <span class="i">instance property</span><br>
+                        <span class="s">an object property that's defined by the class constructor</span><br><br>
+                        <span class="i">static method</span><br>
+                        <span class="s">method that is bound to the class and not an instance</span><br><br>
+                        <span class="i">static property</span><br>
+                        <span class="s">use of keyword static to denote a class property</span><br><br>
+                        <span class="i">namespace</span><br>
+                        <span class="s">a rule where a variable within a domain cannot have the same name else a name
+                        collision will occur</span><br><br>
+                        <span class="i">fixture</span><br>
+                        <span class="s">code testing feature where a fixed environment is created so that test results
+                        are repeatable</span><br><br>
+                        <span class="i">type hint</span><br>
+                        <span class="s">a way for the programmer to hint at the type of object being used</span><br><br>
+                        <span class="i">type cast</span><br>
+                        <span class="s">to change a variable from one data type to another</span>
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold lh-1 mb-3">Glossary</h2>
+                    <p class="lead">
+                        <span class="i">object</span><br>
+                        <span class="s">basic unit of OOP where both the data and function that operate on data are
+                        bundled as a unit</span><br><br>
+                        <span class="i">class</span><br>
+                        <span class="s">template that describe a set of properties that belong to an object</span><br><br>
+                        <span class="i">instantiation</span><br>
+                        <span class="s">process of creating an object or an instance of a class</span><br><br>
+                        <span class="i">static</span><br>
+                        <span class="s">an element of the program that cannot be instantiated</span><br><br>
+                        <span class="i">encapsulation</span><br>
+                        <span class="s">practice of binding object features into a single unit and restricting access
+                        to certain properties</span><br><br>
+                        <span class="i">inheritance</span><br>
+                        <span class="s">practice of creating a new child class from an existing class, thereby
+                        preventing code duplication but custom application of an existing class</span><br><br>
+                        <span class="i">polymorphism</span><br>
+                        <span class="s">practice of structuring the program so that calls to a method will
+                        return the right method call despite other classes of the same family using the same method name
+                        </span><br><br>
+                        <span class="i">abstraction</span><br>
+                        <span class="s">practice of allowing only essential information to be accessible and hiding
+                        the background details</span>
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-5 mb-3">
+                    <img src="{{ url_for('static', filename='images/calculator_operationClasses.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-5" alt="Heroku-deploy YAML"
+                         width="700" height="700"
+                         loading="lazy">
+
+                    <img src="{{ url_for('static', filename='images/calculator_calculatorClass.png') }}"
+                         class="d-block img-fluid border rounded-3 shadow-lg mb-5" alt="Heroku-deploy YAML"
+                         width="500" height="500"
+                         loading="lazy">
+
+                    <img src="{{ url_for('static', filename='images/calculator_instantiate.png') }}"
+                         class="d-block img-fluid border rounded-3 shadow-lg" alt="Heroku-deploy YAML"
+                         width="500" height="500"
+                         loading="lazy">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold lh-1 mb-3">Encapsulation & Abstraction</h2>
+                    <p class="lead">
+                        Our caculator program begins by defining the calculator operations: addition, subtraction,
+                        multiplication and division. For conciseness, I have shown just the
+                        <span class="f">Addition</span> class on the right but note that the following discussion
+                        applies for all classes. <span class="f">Addition</span>'s static
+                        method <span class="f"> add </span> returns the sum of
+                        <span class="f"> value_1 </span> and <span class="f"> value_2 </span>. This is a static method
+                        because no object needs to be instantiated to run <span class="f"> add </span>. To add two
+                        values, our <span class="f"> Calculator </span> class calls <span class="f">Addition</span>
+                        class's <span class="f"> add </span> method. In doing so, the <span class="f">Addition</span>
+                        class's <span class="f"> add</span> method is abstracted away from
+                        any instantiations of the <span class="f">Calculator</span> class. You can see a
+                        <span class="f">Calculator</span> object instantiated in our
+                        <span class="f">test_calculator_add_method</span> method. Whoever runs this method, never has
+                        to know how the <span class="f"> Calculator </span> object is adding but only that it is
+                        adding successfully.
+                    </p>
+                    <p class="lead">
+
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-5 mb-3">
+                    <img src="{{ url_for('static', filename='images/calculator_inheritance.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-5" alt="Calculator Inheritance"
+                         width="500" height="500"
+                         loading="lazy">
+
+                    <img src="{{ url_for('static', filename='images/calculator_calculationClass.png') }}"
+                         class="d-block img-fluid border rounded-3 shadow-lg" alt="Caculator Test"
+                         width="500" height="500"
+                         loading="lazy">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold lh-1 mb-3">Inheritance & Polymorphism</h2>
+                    <p class="lead">
+                        Here we see another <span class="f">Addition</span> class but this time, it extends the
+                        <span class="f">Calculation</span> class. In another words, the <span class="f">Addition</span>
+                        class inherits all the methods and attributes of the <span class="f">Calculation</span> class,
+                        which allowed us to create <span class="f">Addition</span>  without code repetition.
+                    </p>
+                    <p class="lead">
+                        An example of polymorphism can also be seen here. By defining the
+                        <span class="f">get_result</span> method in our <span class="f">Addition</span> class as well
+                        as in our other calculations classes (<span class="f">Subtraction</span>,
+                        <span class="f">Multiplication</span>, <span class="f">Division</span>), running
+                        <span class="f">get_result</span> of any instance of any one of the classes will return the
+                        appropriate result.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <hr class="featurette-divider">
+        </div>
+    </main>
+{% endblock %}

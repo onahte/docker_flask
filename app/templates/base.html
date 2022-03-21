@@ -39,6 +39,15 @@
           <li class="nav-item">
             <a class="nav-link"  href="{{ url_for('simple_pages.show', page="cicd")}}">CI/CD</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="oop")}}">OOP</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="aaa")}}">AAA</a>
+          <li class="nav-item">
+            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="solid")}}">SOLID</a>
+          </li>
+          </li>
         </ul>
       </div>
     </div>
@@ -52,7 +61,6 @@
   <footer class="container">
       <p class="float-end"><a href="#">Back to top</a></p>
       <p>Environment: {{ deployment_environment }} - Copyright: {{ year }} Ethan Oh &middot; <a href="mailto:eo238@njit.com">Contact</a></p>
-      <p>Message: {{ mymessage }} {{ format_price(100) }}</p>
   </footer>
 
 
