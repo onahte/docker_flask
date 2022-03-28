@@ -18,6 +18,11 @@
 - Blueprint
 - YAML
 - CI/CD
+- OOP
+- AAA
+- Pylint
+- Pytest
+- SOLID
 
 ### Summary
 
