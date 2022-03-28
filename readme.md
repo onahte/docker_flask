@@ -13,9 +13,12 @@
 
 - Git
 - Docker
-- Python/Flask
+- Python
+- Flask
+- Blueprint
+- YAML
 - CI/CD
 
 ### Summary
 
-This project implements the technologies listed above to produce a website that summarizes what these technologies are and how they were implemented.
+This project implements the technologies listed above and summarizes how these technologies were implemented.
