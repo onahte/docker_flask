@@ -23,6 +23,7 @@
 - Pylint
 - Pytest
 - SOLID
+- Design Patterns
 
 ### Summary
 
