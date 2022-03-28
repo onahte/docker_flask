@@ -35,7 +35,7 @@ def test_request_python(client):
     """This makes the python page"""
     response = client.get("/python")
     assert response.status_code == 200
-    assert b"Python" in response.data
+    assert b"Python+Flask" in response.data
 
 def test_request_cicd(client):
     """This makes the cicd page"""
