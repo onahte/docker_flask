@@ -26,35 +26,42 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+                    <script>
+                        $(function(){
+                            $('a').each(function(){
+                                if ($(this).prop('href') === window.location.href) {
+                                    $(this).addClass('active'); $(this).parents('li').addClass('active');
+                                }
+                            });
+                        });
+                    </script>
                     <li class="nav-item">
-                        <a class="nav-link {{ lpage }}" aria-current="page"
+                        <a class="nav-link" aria-current="page"
                            href="{{ url_for('simple_pages.show', page="index")}}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ lgit }}" href="{{ url_for('simple_pages.show', page="git")}}">Git</a>
+                        <a class="nav-link" href="{{ url_for('simple_pages.show', page="git")}}">Git</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ldock }}"
-                           href="{{ url_for('simple_pages.show', page="docker")}}">Docker</a>
+                        <a class="nav-link" href="{{ url_for('simple_pages.show', page="docker")}}">Docker</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ lpy }}" href="{{ url_for('simple_pages.show', page="python")}}">Python+Flask</a>
+                        <a class="nav-link" href="{{ url_for('simple_pages.show', page="python")}}">Python+Flask</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ lci }}" href="{{ url_for('simple_pages.show', page="cicd")}}">CI/CD</a>
+                        <a class="nav-link" href="{{ url_for('simple_pages.show', page="cicd")}}">CI/CD</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ loop }}" href="{{ url_for('simple_pages.show', page="oop")}}">OOP</a>
+                        <a class="nav-link" href="{{ url_for('simple_pages.show', page="oop")}}">OOP</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ laaa }}" href="{{ url_for('simple_pages.show', page="aaa")}}">AAA</a>
+                        <a class="nav-link" href="{{ url_for('simple_pages.show', page="aaa")}}">AAA</a>
                     <li class="nav-item">
                     <li class="nav-item">
-                        <a class="nav-link {{ lplint }}"
-                           href="{{ url_for('simple_pages.show', page="plint")}}">Pylint</a>
+                        <a class="nav-link" href="{{ url_for('simple_pages.show', page="plint")}}">Pylint</a>
                     <li class="nav-item">
-                        <a class="nav-link {{ lsolid }}"
-                           href="{{ url_for('simple_pages.show', page="solid")}}">SOLID</a>
+                        <a class="nav-link" href="{{ url_for('simple_pages.show', page="solid")}}">SOLID</a>
                     </li>
                 </ul>
             </div>

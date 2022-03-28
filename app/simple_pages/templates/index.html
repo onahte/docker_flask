@@ -6,9 +6,12 @@
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="Git"></button>
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Docker"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
-                        aria-label="Python/Flask"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Python/Flask"></button>
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="CICD"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="OOP"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="AAA"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="6" aria-label="Pylint"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="7" aria-label="SOLID"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -18,8 +21,8 @@
                     <div class="container">
                         <div class="carousel-caption text-start">
                             <h1 class="text-dark">Power of Versioning</h1>
-                            <p class="text-dark">Git allows project participants to make changes to the code base safely
-                                and efficiently.</p>
+                            <p class="text-dark">Git allows project participants to make changes <br>
+                                to the code base safely and efficiently.</p>
                         </div>
                     </div>
                 </div>
@@ -31,8 +34,8 @@
                     <div class="container">
                         <div class="carousel-caption text-start">
                             <h1>Code Containerized</h1>
-                            <p>Docker enables your application automation by packaging it into a nimble and agile
-                                solution.
+                            <p>Docker enables your application automation by <br>
+                                packaging it into a nimble and agile solution.
                             </p>
                         </div>
                     </div>
@@ -45,8 +48,8 @@
                     <div class="container">
                         <div class="carousel-caption text-start">
                             <h1 class="text-dark">A Framework to Do It All</h1>
-                            <p class="text-dark">This technology enabled us to build once but to service infinite
-                                customers.
+                            <p class="text-dark">This technology enabled us to build once <br>
+                                but to service infinite customers.
                             </p>
                         </div>
                     </div>
@@ -59,11 +62,63 @@
                     <div class="container">
                         <div class="carousel-caption text-start">
                             <h1>Keep It Going</h1>
-                            <p>Application development doesn't have to be a stop, wait and go process. Not with a CI/CD
-                                pipeline.</p>
+                            <p>Application development doesn't have to be a stop, <br>
+                                wait and go process. Not with a CI/CD pipeline.</p>
                         </div>
                     </div>
                 </div>
+                <div class="carousel-item">
+                    <a href="{{ url_for('simple_pages.show', page="oop") }}">
+                        <img src="{{ url_for('static', filename='images/banner_oop.jpg') }}">
+                    </a>
+                    <div class="container">
+                        <div class="carousel-caption text-start" style="color:black">
+                            <h1>Instantiate.</h1>
+                            <h1>Encapsulate.</h1>
+                            <h1>Polymorph. Oh, my!</h1>
+                            <p>Object oriented programming helps us <br>
+                                build robust and versatile code.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="{{ url_for('simple_pages.show', page="aaa") }}">
+                        <img src="{{ url_for('static', filename='images/banner_aaa.jpg') }}">
+                    </a>
+                    <div class="container">
+                        <div class="carousel-caption text-start" style="color:black">
+                            <h1>AAA isn't just insurance. <br> It's assurance.</h1>
+                            <p>The AAA model helps us test our code and <br>
+                                keeps at bay the messy surprises of bad code.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="{{ url_for('simple_pages.show', page="pylint") }}">
+                        <img src="{{ url_for('static', filename='images/banner_pylint.jpg') }}">
+                    </a>
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1>Keeping the <br>Team Uniform</h1>
+                            <p>Pylint helps everyone keep code <br>
+                                consistent and well-written.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a href="{{ url_for('simple_pages.show', page="solid") }}">
+                        <img src="{{ url_for('static', filename='images/banner_solid.jpg') }}">
+                    </a>
+                    <div class="container">
+                        <div class="carousel-caption text-start" style="color:black">
+                            <h1>SOLID Helps Your <br>Code Be Solid</h1>
+                            <p>Some very smart people laid out the guardrails to writing agile, <br>
+                                reusable and maintainable code. Find out more on our SOLID page.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

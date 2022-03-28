@@ -6,8 +6,8 @@ def test_request_main_menu_links(client):
     assert response.status_code == 200
     assert b'<a class="nav-link" href="/git">Git</a>' in response.data
     assert b'<a class="nav-link" href="/docker">Docker</a>' in response.data
-    assert b'<a class="nav-link" href="/python">Python</a>' in response.data
-    assert b'<a class="nav-link" href="/cicd">CD/CD</a>' in response.data
+    assert b'<a class="nav-link" href="/python">Python+Flask</a>' in response.data
+    assert b'<a class="nav-link" href="/cicd">CI/CD</a>' in response.data
     assert b'<a class="nav-link" href="/oop">OOP</a>' in response.data
     assert b'<a class="nav-link" href="/plint">Pylint</a>' in response.data
     assert b'<a class="nav-link" href="/aaa">AAA</a>' in response.data
