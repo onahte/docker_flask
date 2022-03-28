@@ -2,6 +2,10 @@ body {
 font-size: 100%;
 }
 
+.b {
+  font-weight: bold;
+}
+
 .p {
   font-family: "Andalé Mono", "Courier", "Lucida Console", "Monaco", monospace;
   font-size: 75%;

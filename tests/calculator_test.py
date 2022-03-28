@@ -5,8 +5,7 @@ from calculator import Calculator
 
 def tuple_list():
     """Arranging Data for AAA Testing"""
-    return 1.0, 2
-
+    return 1, 2
 
 def test_calculator_add_method():
     """Testing the Calculator"""
@@ -21,9 +20,13 @@ def test_calculator_add_method():
 
 def test_calculator_subtract_method():
     """Testing the Calculator Subtract"""
-    assert Calculator.subtract(tuple_list()) == -3
+    assert Calculator.subtract(tuple_list()) == -1
 
 
 def test_calculator_multiply_method():
-    """Testing the Calculator Subtract"""
+    """Testing the Calculator Multiply"""
     assert Calculator.multiply(tuple_list()) == 2
+
+def test_calculator_divide_method():
+    """Testing the Calculator Divide"""
+    assert Calculator.divide(tuple_list()) == .5

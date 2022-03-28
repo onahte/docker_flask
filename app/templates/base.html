@@ -11,57 +11,66 @@
     {% block head %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
 
-        <title>{% block title %}{% endblock %}IS601 Project1</title>
+        <title>{% block title %}{% endblock %}IS601</title>
     {% endblock %}
 
 </head>
 <header class="mb-5">
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand text-light" href="{{ url_for('simple_pages.show', page="index")}}">Ethan's IS601 Project 1</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url_for('simple_pages.show', page="index")}}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="git")}}">Git</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="docker")}}">Docker</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="python")}}">Python+Flask</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="cicd")}}">CI/CD</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="oop")}}">OOP</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="aaa")}}">AAA</a>
-          <li class="nav-item">
-            <a class="nav-link"  href="{{ url_for('simple_pages.show', page="solid")}}">SOLID</a>
-          </li>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="{{ url_for('simple_pages.show', page="index") }}">Ethan's IS601
+                Project 1+2</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link {{ lpage }}" aria-current="page"
+                           href="{{ url_for('simple_pages.show', page="index")}}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ lgit }}" href="{{ url_for('simple_pages.show', page="git")}}">Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ ldock }}"
+                           href="{{ url_for('simple_pages.show', page="docker")}}">Docker</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ lpy }}" href="{{ url_for('simple_pages.show', page="python")}}">Python+Flask</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ lci }}" href="{{ url_for('simple_pages.show', page="cicd")}}">CI/CD</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ loop }}" href="{{ url_for('simple_pages.show', page="oop")}}">OOP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ laaa }}" href="{{ url_for('simple_pages.show', page="aaa")}}">AAA</a>
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link {{ lplint }}"
+                           href="{{ url_for('simple_pages.show', page="plint")}}">Pylint</a>
+                    <li class="nav-item">
+                        <a class="nav-link {{ lsolid }}"
+                           href="{{ url_for('simple_pages.show', page="solid")}}">SOLID</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </header>
 
 {% block content %}
 {% endblock %}
 
 
-  <footer class="container">
-      <p class="float-end"><a href="#">Back to top</a></p>
-      <p>Environment: {{ deployment_environment }} - Copyright: {{ year }} Ethan Oh &middot; <a href="mailto:eo238@njit.com">Contact</a></p>
-  </footer>
+<footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>Environment: {{ deployment_environment }} - Copyright: {{ year }} Ethan Oh &middot; <a
+            href="mailto:eo238@njit.com">Contact</a></p>
+</footer>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
