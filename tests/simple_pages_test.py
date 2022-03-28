@@ -33,7 +33,7 @@ def test_request_docker(client):
 
 def test_request_python(client):
     """This makes the python page"""
-    response = client.get("/pyflask")
+    response = client.get("/python")
     assert response.status_code == 200
     assert b"Python + Flask" in response.data
 
