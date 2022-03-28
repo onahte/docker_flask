@@ -5,79 +5,163 @@
             <h1 class="display-4 fw-bold">SOLID & Design Patterns</h1>
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">
-                    Object oriented programming or OOP is a programming paradigm, where
+                    SOLID is an acronym for 5 principles to guide engineers in writing good code. The name SOLID was
+                    coined by Michael Feathers and promoted by Robert Martin (aka "Uncle Bob"), two very prominent
+                    figures in the world of computing. These principles establish practices that help develop
+                    applications that are easier to maintain over time and as the code base grows.
                 </p>
-                You can create an article on how the calculator demonstrates SOLID and identifies the use of design patterns such as the factory pattern.
             </div>
             <div class="overflow-hidden" style="max-height: 30vh;">
                 <div class="container px-5">
-                    <img src="{{ url_for('static', filename='images/cicd_illustration.png') }}"
-                         class="img-fluid mb-4" alt="Flask Homepage" width="500" height="450"
-                         loading="lazy">
+                    <img src="{{ url_for('static', filename='images/programming_guy.png') }}"
+                         class="img-fluid mb-4" alt="SOLID" width="450" height="450" loading="lazy">
                 </div>
             </div>
         </div>
         <div class="container col-xxl-8">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-5">
-                    <img src="{{ url_for('static', filename='images/heroku_dashboard.png') }}"
+                    <img src="{{ url_for('static', filename='images/solid_diagram.jpg') }}"
                          class="d-block mx-lg-auto img-fluid border rounded-3 shadow-sm" alt="Heroku"
-                         width="700" height="700"
+                         width="800" height="800"
                          loading="lazy">
                 </div>
                 <div class="col-lg-7">
-                    <h2 class="fw-bold lh-1 mb-3">Heroku</h2>
+                    <h2 class="fw-bold lh-1 mb-3">5 Principles of SOLID</h2>
                     <p class="lead">
-                        Heroku is a PaaS that's a part of our automation pipeline. The Heroku platform is built on top
-                        of AWS but the cloud-level configurations have been abstracted away and done for us by Heroku.
-                        Furthermore, Heroku allows us to test our deployment by defaulting the deploy as
-                        <span class="f">https://&lt;APP_NAME&gt;.herokuapp.com</span>. There is of course, the option to
-                        deploy the service with a personal domain.
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="b">S</span> - Single-responsibiltiy<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="b">O</span> - Open/Closed<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="b">L</span> - Liskov Substitution<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="b">I</span> - Interface Segragation<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="b">D</span> - Dependency Inversion<br>
                     </p>
                 </div>
             </div>
             <hr class="featurette-divider">
         </div>
-
         <div class="container col-xxl-8">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-5 mb-3">
-                    <img src="{{ url_for('static', filename='images/herokudeploy_yml.png') }}"
-                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-5" alt="Heroku-deploy YAML"
+                    <img src="{{ url_for('static', filename='images/calculator_operationsClasses.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-5" alt="Operations"
                          width="700" height="700"
                          loading="lazy">
 
-                    <img src="{{ url_for('static', filename='images/git_actions.png') }}"
-                         class="d-block img-fluid border rounded-3 shadow-lg" alt="Heroku-deploy YAML"
+                    <img src="{{ url_for('static', filename='images/calculator_divisionclass.png') }}"
+                         class="d-block img-fluid border rounded-3 shadow-lg mb-5 " alt="Division"
                          width="500" height="500"
+                         loading="lazy">
+
+                    <img src="{{ url_for('static', filename='images/calculator_divisionOpClass.png') }}"
+                         class="d-block img-fluid border rounded-3 shadow-lg" alt="Division Class"
+                         width="300" height="500"
                          loading="lazy">
                 </div>
                 <div class="col-lg-7">
-                    <h2 class="fw-bold lh-1 mb-3">Automation & YAML</h2>
+                    <h2 class="fw-bold lh-1 mb-3">Applying SOLID</h2>
                     <p class="lead">
-                        As mentioned in the Git section of this project site, this website is automatically instantiated
-                        by Github via the <span class="f">prod.yml</span> and <span class="f">dev.yml</span> Workflow
-                        files. These YAML files provide the metadata for Github to know what and how to execute the
-                        automation (so using Github's action keywords is very important). Github will execute the
-                        Workflow file in the order that it was composed. Simple boolean logic is built-in but please
-                        note that YAML is a mark-up language and not a programming language, so it is not capable of
-                        complex logic (I learned this the hard way).
+                        <span class="b">Single-Responsibility Principle</span> states that a class should only have
+                        one job. This makes code readability and maintenance easy by logically organizing the code by
+                        its function. We can see this in our operations classes, where each of the arithmetic
+                        operations are
+                        organized into its own class.
                     </p>
                     <p class="lead">
-                        The <span class="f">prod.yml</span> takes advantage of PyTest to test our page renders as well
-                        as the <span class="f">akhileshns/heroku-deploy</span> repo to provide the code to launch our
-                        production Heroku app. There is no testing executed by <span class="f">dev.yml</span> but like
-                        <span class="f">prod.yml</span>, we take advantage of the <span class="f">akhileshns/
-                        heroku-deploy</span> repo to deploy the development Heroku app. The Docker image of this project
-                        is deployed from the Heroku app, which is a container of the Python Blueprint and the Flask
-                        framework and they in turn, render this website. All this is triggered by a
-                        <span class="p">git push</span>. It's really quite remarkable.
+                        <span class="b">Open-Closed Principle</span> is basically stating that our code should exercise encapsulation, which
+                        we discussed in our OOP page. The idea is that our code should be open to use but not so
+                        accessible to edits. By coding in this way, our application is less prone to break when a
+                        feature needs to be updated or changed. To review these concpets please navigate to the OOP
+                        page or click on the blue link.
+                        <a href="{{ url_for('simple_pages.show', page="oop")}}">
+                            <button type="button" class="btn btn-primary btn-sm px-2">OOP</button>
+                        </a>
+                    </p>
+                    <p class="lead">
+                        <span class="b">Liskov Substitution Principle</span> communicates that every subclass should be able to substitute for
+                        their parent class. By employing inheritance, this principle is automatically employed, where
+                        the methods and attributes defined in the <span class="f">Calculations</span> class are
+                        accessible when one of its subclass, like <span class="f">Division</span> is instantiated. To
+                        see the screenshots, please click on the blue link above and go to the
+                        Inheritance section.
+                    </p>
+                    <p class="lead">
+                        <span class="b">Interface Segregation Principle</span> informs us that a client should never be forced to implement a
+                        part of the program it does not use. In another words, if we built a calculator application
+                        that ony adds and subtracts, then it should not bundle in the multiplication and division
+                        attributes. By creating a separate class for each of these operations, we can avoid this
+                        situation, whereby our limited calculator will never have to instantiate the classes it does
+                        not need.
+                    </p>
+                    <p class="lead">
+                        <span class="b">Dependency Inversion Principle</span> encourages us to rely on abstraction so that there are no hard
+                        dependencies on a piece of code. This ensures that our code is stable when functionality is
+                        edited, but flexible in that our code allows for such changes without difficulty. We have
+                        employed this in our code by having the <span class="f">divide</span> method abstracted away
+                        from the <span class="f">Division</span> class. This ensures that changes to the
+                        <span class="f">Division</span> object will not require changes to the way we divide numbers in
+                        our code.
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-5">
+                    <img src="{{ url_for('static', filename='images/designPatterns.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-sm mb-5" alt=""
+                         width="800" height="800" loading="lazy">
+                    <img src="{{ url_for('static', filename='images/factoryMethod.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-sm" alt=""
+                         width="800" height="800" loading="lazy">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold lh-1 mb-3">Design Patterns</h2>
+                    <p class="lead">
+                        A design pattern is a general solution for common application design problems and is meant to
+                        make development faster, while making your code agile and maintainable. There are 3 main types
+                        of design patterns:<br>
+                        <span class="b">Creational</span> patterns are used for object creation and helps
+                        develop code that employs abstraction and helps object instantiation be efficient.<br>
+                        <span class="b">Structural</span> patterns help in organizing classes to form larger
+                        structures and provide new functionality.<br>
+                        <span class="b">Behavioral</span> patterns provide a template for creating applications that
+                        rely on communication between objects. This pattern is more for managing algorithms and
+                        relationships between objects<br>
+                        In our Calculator program, a creational pattern best suits our needs because, every time a
+                        user inputs an arithmetic operation, we need an efficient way to manage those operations. The
+                        creational pattern informs us to build a class for each of our operations and to use
+                        abstraction, encapsulation and polymorphism to efficiently manage our operation instantiations.
+                    </p>
+                    <p class="lead">
+                        Of the creational patterns, the <span class="b">Factory Method</span> suits our needs best and
+                        is what I just described above. In Factory pattern, objects are
+                        instantiated without revealing the creation logic, while a client uses one interface to create
+                        new objects. In our calculator program, a client uses the <span class="f">Calculator</span>
+                        object to manage all <span class="f">Calculations</span> and <span class="f">Operations</span>
+                        objects.
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-10">
+                    <h2 class="fw-bold lh-1 mb-3">References</h2>
+                    <p class="lead">
+                        -<a href="https://medium.com/@abilash.l/solid-design-principles-bbe9540d7ead">
+                            https://medium.com/@abilash.l/solid-design-principles-bbe9540d7ead</a><br>
+                        -<a href="https://refactoring.guru/design-patterns">
+                            https://refactoring.guru/design-patterns</a><br>
+                        -<a href="https://www.geeksforgeeks.org/design-patterns-set-2-factory-method/?ref=rp">
+                            https://www.geeksforgeeks.org/design-patterns-set-2-factory-method/?ref=rp</a><br>
                     </p>
                 </div>
             </div>
         </div>
-
-
         <div class="container">
             <hr class="featurette-divider">
         </div>

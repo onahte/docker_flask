@@ -45,9 +45,9 @@ class Subtraction(Calculation):
 
     def get_result(self):
         """get the subtraction results"""
-        difference_of_values = 0.0
-        for value in self.values:
-            difference_of_values = Sub.subtract(difference_of_values, value)
+        difference_of_values = self.values[0]
+        for i in range(1, len(self.values)):
+            difference_of_values = Sub.subtract(difference_of_values, self.values[i])
         return difference_of_values
 
 
@@ -67,8 +67,10 @@ class Division(Calculation):
 
     def get_result(self):
         """get the multiplication results"""
-        result = 1.0
-        for value in self.values:
-            result = Div.divide(result, value)
+        result = self.values[0]
+        for i in range(1, len(self.values)):
+            try:
+                result = Div.divide(result, self.values[i])
+            except:
+                print("Cannot divide by 0.")
         return result
-

@@ -79,39 +79,35 @@
         <div class="container col-xxl-8">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-5 mb-3">
-                    <img src="{{ url_for('static', filename='images/calculator_operationClasses.png') }}"
-                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-5" alt="Heroku-deploy YAML"
-                         width="700" height="700"
+                    <img src="{{ url_for('static', filename='images/calculator_divisionOpClass.png') }}"
+                         class="d-block img-fluid border rounded-3 shadow-lg mb-5" alt="divide method"
+                         width="300" height="700"
                          loading="lazy">
 
-                    <img src="{{ url_for('static', filename='images/calculator_calculatorClass.png') }}"
-                         class="d-block img-fluid border rounded-3 shadow-lg mb-5" alt="Heroku-deploy YAML"
-                         width="500" height="500"
+                    <img src="{{ url_for('static', filename='images/calculator_divisionclass.png') }}"
+                         class="d-block img-fluid border rounded-3 shadow-lg mb-5" alt="Division Class"
+                         width="400" height="600"
                          loading="lazy">
 
-                    <img src="{{ url_for('static', filename='images/calculator_instantiate.png') }}"
-                         class="d-block img-fluid border rounded-3 shadow-lg" alt="Heroku-deploy YAML"
-                         width="500" height="500"
+                    <img src="{{ url_for('static', filename='images/calculator_testDivideMethod.png') }}"
+                         class="d-block img-fluid border rounded-3 shadow-lg" alt="Test Divide Method"
+                         width="300" height="500"
                          loading="lazy">
                 </div>
                 <div class="col-lg-7">
                     <h2 class="fw-bold lh-1 mb-3">Encapsulation & Abstraction</h2>
                     <p class="lead">
-                        Our caculator program begins by defining the calculator operations: addition, subtraction,
+                        Our calculator program begins by defining the calculator operations: addition, subtraction,
                         multiplication and division. For conciseness, I have shown just the
-                        <span class="f">Addition</span> class on the right but note that the following discussion
-                        applies for all classes. <span class="f">Addition</span>'s static
-                        method <span class="f"> add </span> returns the sum of
-                        <span class="f"> value_1 </span> and <span class="f"> value_2 </span>. This is a static method
-                        because no object needs to be instantiated to run <span class="f"> add </span>. To add two
-                        values, our <span class="f"> Calculator </span> class calls <span class="f">Addition</span>
-                        class's <span class="f"> add </span> method. In doing so, the <span class="f">Addition</span>
-                        class's <span class="f"> add</span> method is abstracted away from
-                        any instantiations of the <span class="f">Calculator</span> class. You can see a
-                        <span class="f">Calculator</span> object instantiated in our
-                        <span class="f">test_calculator_add_method</span> method. Whoever runs this method, never has
-                        to know how the <span class="f"> Calculator </span> object is adding but only that it is
-                        adding successfully.
+                        <span class="f">Division</span> class on the right but note that the following discussion
+                        applies for all classes. <span class="f">Division</span>'s static
+                        method <span class="f"> divide </span> returns the value after dividing
+                        <span class="f"> value_1 </span> by <span class="f"> value_2 </span>. This is a static method
+                        because no object needs to be instantiated to run <span class="f"> divide </span>. To divide two
+                        values, our <span class="f"> Calculator </span> class calls <span class="f">Division</span>
+                        class's <span class="f"> divide </span> method, which also helps abstract away the code used
+                        to divide. You can see a <span class="f">Calculator</span> object instantiated in our
+                        <span class="f">test_calculator_divide_method</span> method.
                     </p>
                     <p class="lead">
 
@@ -124,31 +120,55 @@
         <div class="container col-xxl-8">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-5 mb-3">
-                    <img src="{{ url_for('static', filename='images/calculator_inheritance.png') }}"
-                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-5" alt="Calculator Inheritance"
-                         width="500" height="500"
-                         loading="lazy">
+                    <img src="{{ url_for('static', filename='images/calculator_divisionHistory.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-5"
+                         alt="Calculator Inheritance" width="500" height="500" loading="lazy">
 
                     <img src="{{ url_for('static', filename='images/calculator_calculationClass.png') }}"
-                         class="d-block img-fluid border rounded-3 shadow-lg" alt="Caculator Test"
-                         width="500" height="500"
-                         loading="lazy">
+                         class="d-block img-fluid border rounded-3 shadow-lg mb-5" alt="Caculatoion Class"
+                         width="500" height="500" loading="lazy">
+
+                    <img src="{{ url_for('static', filename='images/calculator_testDivideGetResult.png') }}"
+                         class="d-block img-fluid border rounded-3 shadow-lg" alt="Divide Get Result Test"
+                         width="300" height="500" loading="lazy">
                 </div>
                 <div class="col-lg-7">
                     <h2 class="fw-bold lh-1 mb-3">Inheritance & Polymorphism</h2>
                     <p class="lead">
-                        Here we see another <span class="f">Addition</span> class but this time, it extends the
-                        <span class="f">Calculation</span> class. In another words, the <span class="f">Addition</span>
-                        class inherits all the methods and attributes of the <span class="f">Calculation</span> class,
-                        which allowed us to create <span class="f">Addition</span>  without code repetition.
+                        Using our <span class="f">Division</span> class again as an example, we can see inheritance in
+                        action. In another words, the <span class="f">Division</span> class inherits all the methods
+                        and attributes of the <span class="f">Calculation</span> class, which allows us to minimize
+                        code repetition. That's why we are able to use the <span class="f">create</span> method of the
+                        <span class="f">Calculations</span> class without having to write it in the
+                        <span class="f">Division</span> class code.
                     </p>
                     <p class="lead">
-                        An example of polymorphism can also be seen here. By defining the
-                        <span class="f">get_result</span> method in our <span class="f">Addition</span> class as well
-                        as in our other calculations classes (<span class="f">Subtraction</span>,
-                        <span class="f">Multiplication</span>, <span class="f">Division</span>), running
-                        <span class="f">get_result</span> of any instance of any one of the classes will return the
-                        appropriate result.
+                        Our <span class="f">Division</span> class also employs polymorphism; by defining the
+                        <span class="f">get_result</span> method in all our classes, the
+                        <span class="f">get_result</span> call will "smartly" retrieve the right
+                        <span class="f">get_result</span>.
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-lg-12">
+                    <h2 class="fw-bold lh-1 mb-3">References</h2>
+                    <p class="lead">
+                        -<a href="https://www.webopedia.com/definitions/instantiation/">
+                            https://www.webopedia.com/definitions/instantiation/</a><br>
+                        -<a href="https://www.tutorialspoint.com/What-is-object-oriented-programming-OOP">
+                            https://www.tutorialspoint.com/What-is-object-oriented-programming-OOP</a><br>
+                        -<a href="https://www.geeksforgeeks.org/python-oops-concepts/">
+                            https://www.geeksforgeeks.org/python-oops-concepts/</a><br>
+                        -<a href="https://stackoverflow.com/questions/12071344/what-are-fixtures-in-programming">
+                            https://stackoverflow.com/questions/12071344/what-are-fixtures-in-programming</a><br>
+                        -<a href=https://www.geeksforgeeks.org/inheritance-in-python/>
+                            https://www.geeksforgeeks.org/inheritance-in-python/</a><br>
+                        -<a href=https://www.geeksforgeeks.org/polymorphism-in-python/>
+                            https://www.geeksforgeeks.org/polymorphism-in-python/</a><br>
                     </p>
                 </div>
             </div>

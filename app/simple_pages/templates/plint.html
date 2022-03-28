@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+    <main>
+        <div class="px-4 pt-5 my-7 text-center border-bottom">
+            <h1 class="display-4 fw-bold">Pylint</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">
+                    While AAA gives us a model to test our code functionality, Pylint is a tool that checks for errors
+                    in our Python code. Configurable and easy to deploy, Pylint helps teams develop uniform code
+                    that adheres to the groups' standards.
+                </p>
+            </div>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-4">
+                <a href="https://pylint.org/" target="_blank">
+                <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Pylint Home</button>
+                </a>
+            </div>
+            <div class="overflow-hidden" style="max-height: 30vh;">
+                <div class="container px-5">
+                    <img src="{{ url_for('static', filename='images/pylint_home.png') }}"
+                         class="img-fluid border rounded-3 shadow-lg mb-4" alt="Pylint Homepage" width="600" height="800"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-5 mb-3">
+                    <img src="{{ url_for('static', filename='images/requirements.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-5" alt="Requirements"
+                         width="150" height="400"
+                         loading="lazy">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold lh-1 mb-3">Pylint Deployment</h2>
+                    <p class="lead">
+                        PyTest runs all our tests, including Pylint. As mentioned in our Python+Flask page, our Git
+                        Workflow files automates the installation and deployment of PyTest and Pylint. As you can see
+                        in our <span class="f">requirements.txt</span>, we explicate the applications and tools we
+                        want to automatically download and install. By listing <span class="f">pytest-pylint</span>,
+                        Pylint is installed as part of our automated pipeline. To review Git Workflow YAML, please
+                        navigate to the "Testing the Code" section of the Python+Flaks page or click on the blue link.
+                        <a href="{{ url_for('simple_pages.show', page="python")}}">
+                            <button type="button" class="btn btn-primary btn-sm px-2">Workflow</button>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-5 mb-3">
+                    <img src="{{ url_for('static', filename='images/pylintrc.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-5" alt="Pylintrc"
+                         width="400" height="500"
+                         loading="lazy">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="fw-bold lh-1 mb-3">Configuring Pylint</h2>
+                    <p class="lead">
+                        Pylint is designed to be very easy to configure. By editing the <span class="f">.pylintrc</span>
+                        library file, we can configure the Python version, what errors to show and much more. We can
+                        even configure a list of bad variable names the development team would like to avoid. This
+                        may possibly be a senior engineer's or tech lead's best friend as it can make code review less
+                        frustrating by enforcing some code etiquettes. The file is commented with instructions in
+                        detail, so it is very easy to navigate.
+                    </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-lg-12">
+                    <h2 class="fw-bold lh-1 mb-3">References</h2>
+                    <p class="lead">
+                        -<a href="https://docs.pytest.org/en/7.1.x/">
+                            https://docs.pytest.org/en/7.1.x/</a><br>
+                        -<a href="https://pylint.org/">
+                            https://pylint.org/</a><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <hr class="featurette-divider">
+        </div>
+    </main>
+{% endblock %}

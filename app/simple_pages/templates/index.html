@@ -12,55 +12,55 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{ url_for('static', filename='images/banner_git.jpg') }}">
+                    <a href="{{ url_for('simple_pages.show', page="git") }}">
+                        <img src="{{ url_for('static', filename='images/banner_git.jpg') }}">
+                    </a>
                     <div class="container">
                         <div class="carousel-caption text-start">
                             <h1 class="text-dark">Power of Versioning</h1>
                             <p class="text-dark">Git allows project participants to make changes to the code base safely
                                 and efficiently.</p>
-                            <p><a class="btn btn-lg btn-primary" href="{{ url_for('simple_pages.show', page="git") }}">
-                                Git</a></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="carousel-item">
-                    <img src="{{ url_for('static', filename='images/banner_docker.jpg') }}">
+                    <a href="{{ url_for('simple_pages.show', page="docker") }}">
+                        <img src="{{ url_for('static', filename='images/banner_docker.jpg') }}">
+                    </a>
                     <div class="container">
                         <div class="carousel-caption text-start">
                             <h1>Code Containerized</h1>
                             <p>Docker enables your application automation by packaging it into a nimble and agile
                                 solution.
                             </p>
-                            <p><a class="btn btn-lg btn-primary"
-                                  href="{{ url_for('simple_pages.show', page="docker") }}">Docker</a></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="carousel-item">
-                    <img src="{{ url_for('static', filename='images/banner_python.jpg') }}">
+                    <a href="{{ url_for('simple_pages.show', page="python") }}">
+                        <img src="{{ url_for('static', filename='images/banner_python.jpg') }}">
+                    </a>
                     <div class="container">
                         <div class="carousel-caption text-start">
                             <h1 class="text-dark">A Framework to Do It All</h1>
                             <p class="text-dark">This technology enabled us to build once but to service infinite
                                 customers.
                             </p>
-                            <p><a class="btn btn-lg btn-primary"
-                                  href="{{ url_for('simple_pages.show', page="python") }}">Python + Flask</a></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="carousel-item">
-                    <img src="{{ url_for('static', filename='images/banner_cicd.jpg') }}">
+                    <a href="{{ url_for('simple_pages.show', page="cicd") }}">
+                        <img src="{{ url_for('static', filename='images/banner_cicd.jpg') }}">
+                    </a>
                     <div class="container">
                         <div class="carousel-caption text-start">
                             <h1>Keep It Going</h1>
                             <p>Application development doesn't have to be a stop, wait and go process. Not with a CI/CD
                                 pipeline.</p>
-                            <p><a class="btn btn-lg btn-primary" href="{{ url_for('simple_pages.show', page="git") }}">
-                                CI/CD</a></p>
                         </div>
                     </div>
                 </div>

@@ -2,37 +2,63 @@
 {% block content %}
     <main>
         <div class="px-4 pt-5 my-7 text-center border-bottom">
-            <h1 class="display-4 fw-bold">AAA</h1>
+            <h1 class="display-4 fw-bold">Arrange. Act. Assert.</h1>
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">
-                    AAA
+                    Arrange, Act, Assert or AAA is a testing paradigm to structure code testing. Testing is a
+                    critical step in the development cycle by providing empirical feedback of our code and preventing
+                    dangerous code from being integrated into the main code base. Following AAA helps organize the
+                    test and aids in yielding a successful testing phase. This page is an overview of the AAA
+                    pattern and how it was used in this project.
                 </p>
-                Create a tutorial that demonstrates AAA testing with Python and explain why testing is important. pylint
             </div>
             <div class="overflow-hidden" style="max-height: 30vh;">
                 <div class="container px-5">
                     <img src="{{ url_for('static', filename='images/aaa_team.jpg') }}"
-                         class="img-fluid mb-4" alt="Flask Homepage" width="700" height="800"
+                         class="img-fluid mb-4" alt="AAA Team" width="600" height="800"
                          loading="lazy">
                 </div>
             </div>
         </div>
         <div class="container col-xxl-8">
-            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-                <div class="col-10 col-sm-8 col-lg-5">
-                    <img src="{{ url_for('static', filename='images/heroku_dashboard.png') }}"
-                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-sm" alt="Heroku"
-                         width="700" height="700"
-                         loading="lazy">
-                </div>
-                <div class="col-lg-7">
-                    <h2 class="fw-bold lh-1 mb-3">Heroku</h2>
+            <div class="row flex-lg-row-reverse g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <h2 class="fw-bold lh-1 mb-3">To employ the AAA model...</h2>
                     <p class="lead">
-                        Heroku is a PaaS that's a part of our automation pipeline. The Heroku platform is built on top
-                        of AWS but the cloud-level configurations have been abstracted away and done for us by Heroku.
-                        Furthermore, Heroku allows us to test our deployment by defaulting the deploy as
-                        <span class="f">https://&lt;APP_NAME&gt;.herokuapp.com</span>. There is of course, the option to
-                        deploy the service with a personal domain.
+                        1. Arrange : Arrange or set up the test case, making sure that all the pieces needed for
+                        testing are in place. For instance, if the application relies on a database, a sample database
+                        needs to be prepared. <br>
+                        2. Act : Activate the code to elicit a response. For instance, if the application has a method
+                        to search a database, that method is called so that we can observe the outcome. <br>
+                        3. Assert : Predefine the expected outcome. For instance, the activated method should return
+                        the database search result. If the result matches the assertion, our code has passed. <br>
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold lh-1 mb-3">Unit Testing with AAA</h2>
+                    <p class="lead">
+                        AAA is a great tool for unit testing because the AAA model is built for testing application
+                        components (or units). The idea behind unit testing is that for the application to function as
+                        a whole, each unit much function as designed. By employing AAA, we can automate the unit tests
+                        as we have done in this project - just as we automated deployment, our Github Workflow files
+                        deploy our unit tests. For a refresher on how we did this, please go back to the CI/CD page or
+                        click on the blue link.
+                        <a href="{{ url_for('simple_pages.show', page="cicd")}}">
+                            <button type="button" class="btn btn-primary btn-sm px-2">CI/CD</button>
+                        </a>
+                    </p>
+                    <p class="lead">
+                        Now, unit testing is only useful if it yields actionable information. AAA helps with this by
+                        organizing how we test and explicating specific assertions that the test must meet. In doing
+                        so, AAA helps us to work methodically and follow a workflow: <br>
+                    </p>
+                    <p class="text-center">
+                        Create test case -> Review/Rework -> Baseline -> Execute test cases
+                    </p>
+                    <p class="lead">
+                        By working in this manner, the entire process of development becomes agile and easier to make
+                        sure our final application is of high quality. It is easier to locate mistakes, document the
+                        progress and adapt our code quickly.
                     </p>
                 </div>
             </div>
@@ -42,42 +68,45 @@
         <div class="container col-xxl-8">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-5 mb-3">
-                    <img src="{{ url_for('static', filename='images/herokudeploy_yml.png') }}"
-                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-5" alt="Heroku-deploy YAML"
+                    <img src="{{ url_for('static', filename='images/calculator_testDivisionInstance.png') }}"
+                         class="d-block mx-lg-auto img-fluid border rounded-3 shadow-lg mb-5" alt="AAA Calculator Test"
                          width="700" height="700"
-                         loading="lazy">
-
-                    <img src="{{ url_for('static', filename='images/git_actions.png') }}"
-                         class="d-block img-fluid border rounded-3 shadow-lg" alt="Heroku-deploy YAML"
-                         width="500" height="500"
                          loading="lazy">
                 </div>
                 <div class="col-lg-7">
-                    <h2 class="fw-bold lh-1 mb-3">Automation & YAML</h2>
+                    <h2 class="fw-bold lh-1 mb-3">AAA Applied</h2>
                     <p class="lead">
-                        As mentioned in the Git section of this project site, this website is automatically instantiated
-                        by Github via the <span class="f">prod.yml</span> and <span class="f">dev.yml</span> Workflow
-                        files. These YAML files provide the metadata for Github to know what and how to execute the
-                        automation (so using Github's action keywords is very important). Github will execute the
-                        Workflow file in the order that it was composed. Simple boolean logic is built-in but please
-                        note that YAML is a mark-up language and not a programming language, so it is not capable of
-                        complex logic (I learned this the hard way).
+                        Here we have a screenshot of the method that tests our addition instance. As you can see, it
+                        employs the AAA model, which also acted as a framework to build this test method. The Arrange
+                        step informs us to build the test case. Here, we would like to see if the method can create
+                        an <span class="f">Division</span> instance. So, we have
+                        prepped the test by creating a tuple with two integers. The Act step informs
+                        us to perform the instantiation, which we do and save as <span class="f">calculation</span>.
+                        The tuple is passed into the instance as the instance property. The final step, Assert informs
+                        us to test if the instantiation has been successful, so we pass in
+                        <span class="f">calculation</span> and the class it belongs to which, in this case is
+                        <span class="f">Division</span> into the assertion call <span class="f">isinstance</span>. From
+                        this example, it's evident that following the AAA model makes testing simpler.
                     </p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+        </div>
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-lg-12">
+                    <h2 class="fw-bold lh-1 mb-3">References</h2>
                     <p class="lead">
-                        The <span class="f">prod.yml</span> takes advantage of PyTest to test our page renders as well
-                        as the <span class="f">akhileshns/heroku-deploy</span> repo to provide the code to launch our
-                        production Heroku app. There is no testing executed by <span class="f">dev.yml</span> but like
-                        <span class="f">prod.yml</span>, we take advantage of the <span class="f">akhileshns/
-                        heroku-deploy</span> repo to deploy the development Heroku app. The Docker image of this project
-                        is deployed from the Heroku app, which is a container of the Python Blueprint and the Flask
-                        framework and they in turn, render this website. All this is triggered by a
-                        <span class="p">git push</span>. It's really quite remarkable.
+                        -<a href="https://developers.mews.com/aaa-pattern-a-functional-approach/">
+                            https://developers.mews.com/aaa-pattern-a-functional-approach/</a><br>
+                        -<a href="https://docs.pytest.org/en/7.1.x/">
+                            https://docs.pytest.org/en/7.1.x/</a><br>
+                        -<a href="https://pylint.org/">
+                            https://pylint.org/</a><br>
                     </p>
                 </div>
             </div>
         </div>
-
-
         <div class="container">
             <hr class="featurette-divider">
         </div>
