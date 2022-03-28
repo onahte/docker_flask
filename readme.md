@@ -26,4 +26,4 @@
 
 ### Summary
 
-This project implements the technologies listed above and summarizes how these technologies were implemented.
+This project implements the technologies listed above and summarizes how they were implemented.
