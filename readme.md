@@ -10,7 +10,7 @@
 * [Developmental Deployment](https://onahte-dev.herokuapp.com/)
 
 
-### Summary
+## Summary
 
 The goal of this project was to become familiar with technologies and tools used in website implementation. The website was built using Bootstrap, Flask and some Javascript, which was then containerized by Docker and served from Heroku. The spin-up of the website was automated using Git actions and workflows.
 
